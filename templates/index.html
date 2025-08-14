@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔥 Fire Detection App</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🔥 Fire Detection</h1>
+    <p class="tagline">Real-time monitoring system</p>
+  </header>
+
+  <main class="app-container">
+    <section class="video-section">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="canvas"></canvas>
+      <img id="fireMask" alt="Fire Detection Output" />
+    </section>
+
+    <div class="status-bar">
+      <span id="status">🟢 Detecting...</span>
+    </div>
+
+    <audio id="alarm" src="{{ url_for('static', filename='alarm.wav') }}"></audio>
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2025 FireWatch AI • Built with 🔥 Flask & JS</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
